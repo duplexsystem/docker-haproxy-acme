@@ -75,7 +75,7 @@ RUN apt-get install -y --no-install-recommends \
         curl \
         socat \
         idn \
-        nsupdate
+        bind9-dnsutils
 
 COPY --chown=haproxy:haproxy supervisord.conf /etc/supervisord.conf
 
