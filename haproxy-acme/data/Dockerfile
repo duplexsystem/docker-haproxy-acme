@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=haproxy:bookworm
+ARG BASE_IMAGE=haproxy:trixie
 
 FROM $BASE_IMAGE
 
