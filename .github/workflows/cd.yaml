@@ -25,8 +25,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  IMAGE_HAPROXY_ACME: flobernd/haproxy-acme
-  IMAGE_HAPROXY_ACME_HTTP01: flobernd/haproxy-acme-http01
+  IMAGE_HAPROXY_ACME: duplexsystem/haproxy-acme
+  IMAGE_HAPROXY_ACME_HTTP01: duplexsystem/haproxy-acme-http01
 
 jobs:
   meta:
@@ -58,15 +58,15 @@ jobs:
       ./.github/workflows/docker_release.yml
     with:
       registry: ghcr.io
-      image: flobernd/haproxy-acme
+      image: duplexsystem/haproxy-acme
       context: ./haproxy-acme/data
       build-args: |
         BASE_IMAGE=haproxy:${{ inputs.version-major }}.${{ inputs.version-minor }}-trixie
       platforms: '["linux/386", "linux/amd64", "linux/arm/v5", "linux/arm/v7", "linux/arm64", "linux/ppc64le", "linux/s390x"]'
       tags: |
-        ghcr.io/flobernd/haproxy-acme:${{ inputs.version-major }}.${{ inputs.version-minor }}
-        ghcr.io/flobernd/haproxy-acme:${{ inputs.version-major }}
-        ${{ inputs.tag-latest && format('{0}:latest', 'ghcr.io/flobernd/haproxy-acme') || '' }}
+        ghcr.io/duplexsystem/haproxy-acme:${{ inputs.version-major }}.${{ inputs.version-minor }}
+        ghcr.io/duplexsystem/haproxy-acme:${{ inputs.version-major }}
+        ${{ inputs.tag-latest && format('{0}:latest', 'ghcr.io/duplexsystem/haproxy-acme') || '' }}
       labels: ${{ needs.meta.outputs.labels }}
       annotations: ${{ needs.meta.outputs.annotations }}
     secrets:
@@ -82,15 +82,15 @@ jobs:
       ./.github/workflows/docker_release.yml
     with:
       registry: ghcr.io
-      image: flobernd/haproxy-acme-http01
+      image: duplexsystem/haproxy-acme-http01
       context: ./haproxy-acme-http01/data
       build-args: |
-        BASE_IMAGE=ghcr.io/flobernd/haproxy-acme:${{ inputs.version-major }}.${{ inputs.version-minor }}
+        BASE_IMAGE=ghcr.io/duplexsystem/haproxy-acme:${{ inputs.version-major }}.${{ inputs.version-minor }}
       platforms: '["linux/386", "linux/amd64", "linux/arm/v5", "linux/arm/v7", "linux/arm64", "linux/ppc64le", "linux/s390x"]'
       tags: |
-        ghcr.io/flobernd/haproxy-acme-http01:${{ inputs.version-major }}.${{ inputs.version-minor }}
-        ghcr.io/flobernd/haproxy-acme-http01:${{ inputs.version-major }}
-        ${{ inputs.tag-latest && format('{0}:latest', 'ghcr.io/flobernd/haproxy-acme-http01') || '' }}
+        ghcr.io/duplexsystem/haproxy-acme-http01:${{ inputs.version-major }}.${{ inputs.version-minor }}
+        ghcr.io/duplexsystem/haproxy-acme-http01:${{ inputs.version-major }}
+        ${{ inputs.tag-latest && format('{0}:latest', 'ghcr.io/duplexsystem/haproxy-acme-http01') || '' }}
       labels: ${{ needs.meta.outputs.labels }}
       annotations: ${{ needs.meta.outputs.annotations }}
     secrets:
@@ -106,15 +106,15 @@ jobs:
       ./.github/workflows/docker_release.yml
     with:
       registry: ghcr.io
-      image: flobernd/haproxy-acme-dns01
+      image: duplexsystem/haproxy-acme-dns01
       context: ./haproxy-acme-dns01/data
       build-args: |
-        BASE_IMAGE=ghcr.io/flobernd/haproxy-acme:${{ inputs.version-major }}.${{ inputs.version-minor }}
+        BASE_IMAGE=ghcr.io/duplexsystem/haproxy-acme:${{ inputs.version-major }}.${{ inputs.version-minor }}
       platforms: '["linux/386", "linux/amd64", "linux/arm/v5", "linux/arm/v7", "linux/arm64", "linux/ppc64le", "linux/s390x"]'
       tags: |
-        ghcr.io/flobernd/haproxy-acme-dns01:${{ inputs.version-major }}.${{ inputs.version-minor }}
-        ghcr.io/flobernd/haproxy-acme-dns01:${{ inputs.version-major }}
-        ${{ inputs.tag-latest && format('{0}:latest', 'ghcr.io/flobernd/haproxy-acme-dns01') || '' }}
+        ghcr.io/duplexsystem/haproxy-acme-dns01:${{ inputs.version-major }}.${{ inputs.version-minor }}
+        ghcr.io/duplexsystem/haproxy-acme-dns01:${{ inputs.version-major }}
+        ${{ inputs.tag-latest && format('{0}:latest', 'ghcr.io/duplexsystem/haproxy-acme-dns01') || '' }}
       labels: ${{ needs.meta.outputs.labels }}
       annotations: ${{ needs.meta.outputs.annotations }}
     secrets:
@@ -130,15 +130,15 @@ jobs:
       ./.github/workflows/docker_release.yml
     with:
       registry: ghcr.io
-      image: flobernd/haproxy-acme-tlsalpn01
+      image: duplexsystem/haproxy-acme-tlsalpn01
       context: ./haproxy-acme-tlsalpn01/data
       build-args: |
-        BASE_IMAGE=ghcr.io/flobernd/haproxy-acme:${{ inputs.version-major }}.${{ inputs.version-minor }}
+        BASE_IMAGE=ghcr.io/duplexsystem/haproxy-acme:${{ inputs.version-major }}.${{ inputs.version-minor }}
       platforms: '["linux/386", "linux/amd64", "linux/arm/v5", "linux/arm/v7", "linux/arm64", "linux/ppc64le", "linux/s390x"]'
       tags: |
-        ghcr.io/flobernd/haproxy-acme-tlsalpn01:${{ inputs.version-major }}.${{ inputs.version-minor }}
-        ghcr.io/flobernd/haproxy-acme-tlsalpn01:${{ inputs.version-major }}
-        ${{ inputs.tag-latest && format('{0}:latest', 'ghcr.io/flobernd/haproxy-acme-tlsalpn01') || '' }}
+        ghcr.io/duplexsystem/haproxy-acme-tlsalpn01:${{ inputs.version-major }}.${{ inputs.version-minor }}
+        ghcr.io/duplexsystem/haproxy-acme-tlsalpn01:${{ inputs.version-major }}
+        ${{ inputs.tag-latest && format('{0}:latest', 'ghcr.io/duplexsystem/haproxy-acme-tlsalpn01') || '' }}
       labels: ${{ needs.meta.outputs.labels }}
       annotations: ${{ needs.meta.outputs.annotations }}
     secrets:
