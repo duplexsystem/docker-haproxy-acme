@@ -67,14 +67,15 @@ RUN echo '. "/usr/local/share/acme/acme.sh.env"' >> /var/lib/haproxy/.bashrc && 
     chown haproxy:haproxy /var/lib/haproxy/.bashrc && \
     chmod 0644 /var/lib/haproxy/.bashrc
 
-# Install 'supervisord' and 'acme.sh' dependencies
+# Install 'supervisord', direct 'acme.sh' dependencies, and 'acme.sh' DNS API dependencies.
 
 RUN apt-get install -y --no-install-recommends \
         supervisor \
         ca-certificates \
         curl \
         socat \
-        idn
+        idn \
+        nsupdate
 
 COPY --chown=haproxy:haproxy supervisord.conf /etc/supervisord.conf
 
