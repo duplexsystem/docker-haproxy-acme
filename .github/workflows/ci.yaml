@@ -59,7 +59,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: true
-          # platforms: linux/386,linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm64,linux/mips64le,linux/ppc64le,linux/s390x
+          # platforms: linux/386,linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
           build-args: |
             BASE_IMAGE=${{ env.BASE_IMAGE }}
           tags: ${{ steps.meta-haproxy-acme.outputs.tags }}
@@ -87,7 +87,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: true
-          # platforms: linux/386,linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm64,linux/mips64le,linux/ppc64le,linux/s390x
+          # platforms: linux/386,linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
           build-args: |
             BASE_IMAGE=${{ fromJSON(steps.build-haproxy-acme.outputs.metadata)['image.name'] }}
           tags: ${{ steps.meta-haproxy-acme-http01.outputs.tags }}
@@ -115,7 +115,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: true
-          # platforms: linux/386,linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm64,linux/mips64le,linux/ppc64le,linux/s390x
+          # platforms: linux/386,linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
           build-args: |
             BASE_IMAGE=${{ fromJSON(steps.build-haproxy-acme.outputs.metadata)['image.name'] }}
           tags: ${{ steps.meta-haproxy-acme-dns01.outputs.tags }}
@@ -143,7 +143,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: true
-          # platforms: linux/386,linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm64,linux/mips64le,linux/ppc64le,linux/s390x
+          # platforms: linux/386,linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
           build-args: |
             BASE_IMAGE=${{ fromJSON(steps.build-haproxy-acme.outputs.metadata)['image.name'] }}
           tags: ${{ steps.meta-haproxy-acme-tlsalpn01.outputs.tags }}

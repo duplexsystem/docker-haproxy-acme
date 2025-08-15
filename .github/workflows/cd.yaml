@@ -62,7 +62,7 @@ jobs:
       context: ./haproxy-acme/data
       build-args: |
         BASE_IMAGE=haproxy:${{ inputs.version-major }}.${{ inputs.version-minor }}-trixie
-      platforms: '["linux/386", "linux/amd64", "linux/arm/v5", "linux/arm/v7", "linux/arm64", "linux/mips64le", "linux/ppc64le", "linux/s390x"]'
+      platforms: '["linux/386", "linux/amd64", "linux/arm/v5", "linux/arm/v7", "linux/arm64", "linux/ppc64le", "linux/s390x"]'
       tags: |
         ghcr.io/duplexsystem/haproxy-acme:${{ inputs.version-major }}.${{ inputs.version-minor }}
         ghcr.io/duplexsystem/haproxy-acme:${{ inputs.version-major }}
@@ -86,7 +86,7 @@ jobs:
       context: ./haproxy-acme-http01/data
       build-args: |
         BASE_IMAGE=ghcr.io/duplexsystem/haproxy-acme:${{ inputs.version-major }}.${{ inputs.version-minor }}
-      platforms: '["linux/386", "linux/amd64", "linux/arm/v5", "linux/arm/v7", "linux/arm64", "linux/mips64le", "linux/ppc64le", "linux/s390x"]'
+      platforms: '["linux/386", "linux/amd64", "linux/arm/v5", "linux/arm/v7", "linux/arm64", "linux/ppc64le", "linux/s390x"]'
       tags: |
         ghcr.io/duplexsystem/haproxy-acme-http01:${{ inputs.version-major }}.${{ inputs.version-minor }}
         ghcr.io/duplexsystem/haproxy-acme-http01:${{ inputs.version-major }}
@@ -110,7 +110,7 @@ jobs:
       context: ./haproxy-acme-dns01/data
       build-args: |
         BASE_IMAGE=ghcr.io/duplexsystem/haproxy-acme:${{ inputs.version-major }}.${{ inputs.version-minor }}
-      platforms: '["linux/386", "linux/amd64", "linux/arm/v5", "linux/arm/v7", "linux/arm64", "linux/mips64le", "linux/ppc64le", "linux/s390x"]'
+      platforms: '["linux/386", "linux/amd64", "linux/arm/v5", "linux/arm/v7", "linux/arm64", "linux/ppc64le", "linux/s390x"]'
       tags: |
         ghcr.io/duplexsystem/haproxy-acme-dns01:${{ inputs.version-major }}.${{ inputs.version-minor }}
         ghcr.io/duplexsystem/haproxy-acme-dns01:${{ inputs.version-major }}
@@ -134,7 +134,7 @@ jobs:
       context: ./haproxy-acme-tlsalpn01/data
       build-args: |
         BASE_IMAGE=ghcr.io/duplexsystem/haproxy-acme:${{ inputs.version-major }}.${{ inputs.version-minor }}
-      platforms: '["linux/386", "linux/amd64", "linux/arm/v5", "linux/arm/v7", "linux/arm64", "linux/mips64le", "linux/ppc64le", "linux/s390x"]'
+      platforms: '["linux/386", "linux/amd64", "linux/arm/v5", "linux/arm/v7", "linux/arm64", "linux/ppc64le", "linux/s390x"]'
       tags: |
         ghcr.io/duplexsystem/haproxy-acme-tlsalpn01:${{ inputs.version-major }}.${{ inputs.version-minor }}
         ghcr.io/duplexsystem/haproxy-acme-tlsalpn01:${{ inputs.version-major }}
