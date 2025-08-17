@@ -16,7 +16,7 @@ if [ $ACME_DEBUG -eq 1 ]; then
     args+=("--debug")
 fi
 
-interval=86400 # 1 day
+interval=3600  # 1 hour
 while :
 do
     now=$(date +%s) # timestamp in seconds
