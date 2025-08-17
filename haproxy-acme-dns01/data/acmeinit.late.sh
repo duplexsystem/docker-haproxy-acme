@@ -18,16 +18,24 @@ args=(
     "-d" "${domains[0]}"
 )
 
+# Optional: DNS sleep
 if [ -n "$ACME_DNS_SLEEP" ]; then
     args+=("--dnssleep" "$ACME_DNS_SLEEP")
 fi
 
+# Optional: Valid-to argument
+if [ -n "$ACME_VALID_TO" ]; then
+    args+=("--valid-to" "$ACME_VALID_TO")
+fi
+
+# Add remaining domains
 for d in "${domains[@]:1}"
 do
     args+=("-d" "$d")
 done
 
-if [ $ACME_DEBUG -eq 1 ]; then
+# Debug mode
+if [ "$ACME_DEBUG" -eq 1 ] 2>/dev/null; then
     args+=("--debug")
 fi
 
